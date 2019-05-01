@@ -1,0 +1,224 @@
+
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+  }
+  /* .vc-box {
+    @include clearfix;
+  } */
+  
+  @mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  /* .vc-box {
+    @include absCenter;
+  } */
+  
+  @mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* .vc-box {
+    @include truncate;  pune "..." la textul care nu incape in container
+  } */
+  
+  @mixin inline-block-lr($container,$left,$right){
+    #{$container}{        
+        text-align: justify; 
+  
+        &:after{
+            content: '';
+            display: inline-block;
+            width: 100%;
+            height: 0;
+            font-size:0;
+            line-height:0;
+        }
+    }
+  
+    #{$left} {
+        display: inline-block;
+        vertical-align: middle; 
+    }
+  
+    #{$right} {
+        display: inline-block;
+        vertical-align: middle; 
+    }
+  }
+  
+  /* @include inline-block-lr('header', 'h1', 'nav'); 
+  <header>
+      <h1>Title</h1>
+      <nav>
+          <a>A Link</a>
+          <a>Another Link</a>
+          <a>A Third Link</a>
+      </nav>
+  </header>
+  Aliniaza h1 si nav items in linie
+  */
+  
+  
+  @mixin padding($top, $right, $bottom, $left) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+  }
+  //Margin mixin
+  @mixin margin($top, $right, $bottom, $left) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+  }
+  
+  /* //Usage definition
+  @include padding(top, right, bottom, left);
+  @include margin(top, right, bottom, left);
+  //Usage 1
+  @include padding(1px, 2px, 3px, 4px,);
+  @include margin(1px, 2px, 3px, 4px);
+  //Output 1
+  // padding: 1px 2px 3px 4px;
+  // margin: 1px 2px 3px 4px;
+  //Usage 2 (with null properties)
+  @include padding(1px, null, 3px, 4px);
+  @include margin(1px, 2px, null, 4px);
+  //Output 2
+  // padding-top: 1px;
+  // padding-bottom: 3px;
+  // padding-left: 4px;
+  // margin-top: 1px;
+  // margin-right: 2px;
+  // margin-left: 4px;
+  view raw */
+  
+  @mixin size($width, $height) {
+    width: $width;
+    height: $height;
+  }
+  /* .container {
+    @include size(50px);
+  } */
+  
+  @mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity = $opacity-ie); //IE8
+  }
+  /* .fade {
+    @include opacity(.4);
+  } */
+  
+  
+  @mixin position($position, $args) {
+    @each $o in top right bottom left {
+      $i: index($args, $o);
+      @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
+        #{$o}: nth($args, $i + 1);
+      }
+    }
+    position: $position;
+  }
+  // Positioning helpers
+  @mixin absolute($args: '') {
+    @include position(absolute, $args);
+  }
+  
+  @mixin fixed($args: '') {
+    @include position(fixed, $args);
+  }
+  
+  @mixin relative($args: '') {
+    @include position(relative, $args);
+  }
+  
+  /* .menu li {
+    @include relative;
+  }
+  
+  .sub-menu {
+    @include absolute(top 100% left 0);
+  }
+  
+  .sticky-bar {
+    @include fixed(top 0 left 0);
+  } */
+  
+  
+  @mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* .wrapper {
+    @include center-block;
+  } */
+  
+  
+  
+  // MEDIA QUERY MANAGER
+  
+  // Breakpoints for each query
+  $smartphone: 480px;
+  $tabletPortrait: 767px;
+  $tabletLandscape: 1024px;
+  $desktop: 1174px;
+  $largeScreen: 1441px;
+  @mixin respond($media) {
+    @if $media == smartphone {
+      @media (max-width: $smartphone) { @content; }
+    }
+    @else if $media == tablet {
+      @media (min-width: $tabletPortrait) and (max-width: $tabletLandscape) { @content; }
+    }
+    @else if $media == smallScreen {
+      @media (max-width: $desktop) { @content; }
+    }
+    @else if $media == desktop {
+      @media (min-width: $desktop) and (max-width: $largeScreen) { @content; }
+    }
+    @else if $media == largeScreen {
+      @media (min-width: $largeScreen) { @content; }
+    }
+  }
+  
+  
+  /* @include respond(phone) {
+    
+  }
+  @include respond(tab-port) {
+    
+  }
+  @include respond(tab-land) {
+    
+  }
+  @include respond(big-desktop) {
+    
+  } */
+  
+
+  // Convert illustrator, indesign and photoshop tracking into letter spacing.
+
+@function tracking( $target ){
+  @return ($target / 1000) * 1em;
+}
+
+@mixin tracking( $target ){
+  letter-spacing: tracking( $target );
+}
+
+/* .example {
+  @include tracking(50);
+} */

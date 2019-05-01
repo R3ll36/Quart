@@ -1,0 +1,26 @@
+/*
+Theme Name: Quart
+Theme URI: http://quart.ro
+Author: Quart Creative Agency /  YASS  < http://yass.ro >
+Author URI: http://quart.ro
+Description:
+Version: 1.0
+
+*/
+
+@import "_imports/normalize";
+@import "_imports/grid";
+@import "_imports/swiper";
+
+
+@import "_imports/mixins";
+@import "_imports/vars";
+@import "_imports/utilities";
+
+
+@import "_imports/fonts";
+@import "_layout/footer";
+@import "_layout/general";
+@import "_layout/header";
+@import "_layout/home";
+@import "_layout/pages";

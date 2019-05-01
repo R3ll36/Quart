@@ -1,0 +1,154 @@
+@font-face {
+    font-family: 'Etelka Text Pro';
+    src: url('../../fonts/EtelkaTextPro-Bold.eot');
+    src: local('../../fonts/Etelka Text Pro Bold'), local('EtelkaTextPro-Bold'),
+      url('../../fonts/EtelkaTextPro-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../../fonts/EtelkaTextPro-Bold.woff2') format('woff2'),
+      url('../../fonts/EtelkaTextPro-Bold.woff') format('woff'),
+      url('../../fonts/EtelkaTextPro-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Etelka Light Pro';
+    src: url('../../fonts/EtelkaLightPro.eot');
+    src: local('../../fonts/Etelka Light Pro Regular'), local('EtelkaLightPro'),
+      url('../../fonts/EtelkaLightPro.eot?#iefix') format('embedded-opentype'),
+      url('../../fonts/EtelkaLightPro.woff2') format('woff2'),
+      url('../../fonts/EtelkaLightPro.woff') format('woff'),
+      url('../../fonts/EtelkaLightPro.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  
+  body {
+    font-family: 'Etelka Light Pro', sans-serif;
+    font-weight: normal;
+    /*font-size: 16px;*/
+    line-height: 1.7;
+    color: $color-primary-dark;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  /* HEADER TEXT */
+  
+  .nav-text {
+    font-family: "Etelka Light Pro";
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    text-align: left;
+    color: $color-primary-dark;
+  }
+  
+  .shop-text {
+    font-family: "Etelka Text Pro";
+    font-weight: bold;
+    font-size: 1.7rem;
+    line-height: 2rem;
+    text-align: left;
+    color: $color-primary-dark;
+  }
+  
+  /* MAIN TEXT */
+  
+  .title-large {
+    font-family: "Etelka Text Pro";
+    font-weight: bold;
+    font-size: 6.8rem;
+    letter-spacing: -0.02em;
+    line-height: 6.4rem;
+    text-align: left;
+    color: $color-primary-dark;
+  }
+  
+  .title-mid {
+    font-family: "Etelka Text Pro";
+    font-weight: bold;
+    font-size: 4.2rem;
+    letter-spacing: -0.02em;
+    line-height: 4rem;
+    text-align: center;
+    color: $color-black;
+  
+  }
+  
+  .title-mid-2 {
+    font-family: "Etelka Text Pro";
+    font-weight: bold;
+    font-size: 3.2rem;
+    letter-spacing: -0.02em;
+    line-height: 3.6rem;
+    text-align: center;
+    color: $color-black;
+  }
+  
+  .title-small {
+    font-family: "Etelka Text Pro";
+    font-weight: bold;
+    font-size: 2.8rem;
+    letter-spacing: -0.02em;
+    line-height: 3rem;
+    text-align: left;
+    color: $color-black;
+  }
+  
+  
+  
+  /* BORDER TEXT */
+  .bordered-text {
+    font-family: "Etelka Text Pro";
+    font-weight: bold;
+    font-size: 8.25rem;
+    letter-spacing: -0.02em;
+    line-height: 7.8rem;
+    text-align: left;
+    color: transparent;
+    border: 1px solid $color-grey-dark;
+  }
+  
+  
+  /* SMALL TEXT */
+  .sub-text {
+    font-family: "Etelka Light Pro";
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    text-align: left;
+    color: $color-primary-dark;
+  }
+  
+  .small-text {
+    font-family: "Etelka Light Pro";
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 1.45rem;
+    text-align: left;
+    color: $color-primary-dark;
+  }
+  
+  
+  /* BUTTONS TEXT */
+  .btn-text {
+    font-family: "Etelka Text Pro";
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: -0.02em;
+    line-height: 15.6px;
+    text-align: left;
+  }
+  
+  a {
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  a:hover {
+    opacity: .4;
+    transition: .3s;
+  }
+  
