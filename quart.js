@@ -1,5 +1,5 @@
 // Set the deadline date (15th July 2024)
-const deadline = new Date("2024-05-29T10:06:00");
+const deadline = new Date("2024-05-29T10:08:00");
 
 // Function to check if the deadline is exceeded
 function checkDeadline() {
